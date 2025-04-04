@@ -1,0 +1,25 @@
+body {
+    background: url(https://static.vecteezy.com/system/resources/previews/055/409/508/non_2x/blue-sky-light-background-white-cloud-sunny-summer-abstract-gradient-clear-day-meteorology-gradation-pattern-wavy-clouds-and-sunburst-rays-fresh-air-sunny-weather-spring-heaven-landscape-vector.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.weather-box {
+    border: 2px solid black;
+    padding: 77px;
+    background-color: seashell;
+    border-radius: 5%;
+}
+
+.location {
+    margin: 0 0 30px 0;
+}
