@@ -8,7 +8,7 @@ const WeatherBox = ({ weather }) => {
     return (
         <div className='weather-box'>
             <div className='location'>{weather?.name}</div>
-            <h3>{weather?.weather[0]?.main}</h3>
+            <h3>{weather?.weather?.[0]?.main}</h3>
             <h2>{celsius}°C / {fahrenheit}°F</h2>
 
         </div>
