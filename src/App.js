@@ -12,6 +12,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 // 4. 현재위치버튼을 누르면 다시 현재위치 기반의 날씨가 나온다.
 // 5. 데이터를 들고 오는 동안 로딩 스피너가 돌아간다.
 
+const OPENWEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
+
 function App() {
 
   const [weather, setWeather] = useState(null);
@@ -32,7 +34,7 @@ function App() {
   const getWeatherByCurrentLocation = async (lat, lon) => {
     try {
       setLoading(true);
-      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=7657ac7041e2a19e52d07d00c8fc3307&units=metric`
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHER_API_KEY}&units=metric`
       let response = await fetch(url);
       let data = await response.json();
       setWeather(data);
@@ -46,7 +48,7 @@ function App() {
   const getWeatherByCity = async () => {
     try {
       setLoading(true);
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7657ac7041e2a19e52d07d00c8fc3307&units=metric`
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPENWEATHER_API_KEY}&units=metric`
       let response = await fetch(url)
       let data = await response.json();
       setWeather(data);
